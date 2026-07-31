@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PSN Chaitanya — Student, Developer, and Community Contributor. A modern portfolio showcasing achievements, projects, and future vision." />
+  <meta name="author" content="Palivela Satya Naga Chaitanya" />
+  <title>PSN Chaitanya | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Grid backdrop -->
+  <div class="grid-backdrop" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__brand" aria-label="PSN Chaitanya home">
+        <span class="nav__brand-mark">PSN</span>
+        <span class="nav__brand-name">Chaitanya</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#hero" class="nav__link is-active" data-section="hero">Home</a>
+        <a href="#about" class="nav__link" data-section="about">About</a>
+        <a href="#journey" class="nav__link" data-section="journey">Journey</a>
+        <a href="#achievements" class="nav__link" data-section="achievements">Achievements</a>
+        <a href="#projects" class="nav__link" data-section="projects">Projects</a>
+        <a href="#certificates" class="nav__link" data-section="certificates">Certificates</a>
+        <a href="#goals" class="nav__link" data-section="goals">Goals</a>
+        <a href="#vision" class="nav__link" data-section="vision">Vision</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero section" id="hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">Hello, I'm</p>
+        <h1 class="hero__name reveal">Palivela Satya<br />Naga Chaitanya</h1>
+        <div class="hero__typing reveal">
+          <span class="hero__typing-prefix">I'm a</span>
+          <span class="hero__typing-text" id="typingText"></span><span class="hero__cursor">|</span>
+        </div>
+        <p class="hero__tagline reveal">
+          Crafting modern digital experiences while chasing knowledge, building communities,
+          and pushing the boundaries of what a student can create.
+        </p>
+        <div class="hero__cta reveal">
+          <a href="#projects" class="btn btn--primary">
+            <span>View My Work</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#about" class="btn btn--ghost">
+            <span>About Me</span>
+          </a>
+        </div>
+        <div class="hero__stats reveal">
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-count="14">0</span>
+            <span class="hero__stat-label">Achievements</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-count="4">0</span>
+            <span class="hero__stat-label">Projects Built</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-count="88.9" data-suffix="%" data-decimals="1">0</span>
+            <span class="hero__stat-label">Top Academic</span>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="hero__scroll" aria-label="Scroll to about section">
+        <span class="hero__scroll-text">Scroll</span>
+        <span class="hero__scroll-mouse"><span></span></span>
+      </a>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="section__head">
+        <span class="section__tag reveal">01 — About</span>
+        <h2 class="section__title reveal">Three sides of one mission</h2>
+      </div>
+      <div class="about__grid">
+        <article class="about__card reveal">
+          <div class="about__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <h3>Student</h3>
+          <p>
+            A curious learner driven by curiosity and discipline. From SOF Olympiad gold medals to a
+            88.9% in Intermediate, education is the foundation everything else is built on.
+          </p>
+        </article>
+        <article class="about__card reveal">
+          <div class="about__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Developer</h3>
+          <p>
+            A builder who turns ideas into working products. From QR-coded chai archives to community
+            command centers — code is how I solve real problems for real people.
+          </p>
+        </article>
+        <article class="about__card reveal">
+          <div class="about__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Community Contributor</h3>
+          <p>
+            A leader who shows up — as Shamrocks House Captain, a parade marcher, and a science award
+            winner. Community isn't a side project; it's the point.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="section" id="journey">
+      <div class="section__head">
+        <span class="section__tag reveal">02 — Journey</span>
+        <h2 class="section__title reveal">A timeline of milestones</h2>
+        <p class="section__sub reveal">Tap any milestone to expand its story.</p>
+      </div>
+      <div class="timeline" id="timeline">
+
+        <div class="timeline__item reveal" data-icon="🥇">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <span class="timeline__emoji">🥇</span>
+              <div>
+                <h3>SOF Olympiad Gold Medal</h3>
+                <span class="timeline__meta">Class 5</span>
+              </div>
+              <span class="timeline__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="timeline__body">
+              <p>A first taste of academic excellence — topping the Science Olympiad Foundation exam and earning a gold medal that sparked a lifelong love of competition and learning.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal" data-icon="🥇">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <span class="timeline__emoji">🥇</span>
+              <div>
+                <h3>SOF Olympiad Gold Medal</h3>
+                <span class="timeline__meta">Class 6</span>
+              </div>
+              <span class="timeline__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="timeline__body">
+              <p>Defending the title. A second consecutive gold medal proved the first wasn't luck — it was a habit of disciplined preparation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal" data-icon="🏆">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <span class="timeline__emoji">🏆</span>
+              <div>
+                <h3>Chekumuki Science Talent Competition</h3>
+                <span class="timeline__meta">Science Talent</span>
+              </div>
+              <span class="timeline__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="timeline__body">
+              <p>Recognized among bright scientific minds in a competitive talent hunt — a celebration of analytical thinking and scientific curiosity.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal" data-icon="🥈">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <span class="timeline__emoji">🥈</span>
+              <div>
+                <h3>Essay Writing Competition</h3>
+                <span class="timeline__meta">2nd Prize</span>
+              </div>
+              <span class="timeline__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="timeline__body">
+              <p>Silver in a battle of words. Turning thoughts into structured, persuasive prose — a skill that now powers how I communicate ideas in code and in life.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal" data-icon="🇮🇳">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <span class="timeline__emoji">🇮🇳</span>
+              <div>
+                <h3>Pariksha Pe Charcha 2023</h3>
+                <span class="timeline__meta">National Event</span>
+              </div>
+              <span class="timeline__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="timeline__body">
+              <p>Part of the Prime Minister's national interaction with students — an inspiring dialogue on exams, stress, and the mindset of a lifelong learner.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal" data-icon="🏅">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <span class="timeline__emoji">🏅</span>
+              <div>
+                <h3>Certificate of Appreciation</h3>
+                <span class="timeline__meta">Recognition</span>
+              </div>
+              <span class="timeline__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="timeline__body">
+              <p>Formal recognition for contribution and effort — a reminder that showing up and doing the work consistently is always noticed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal" data-icon="💡">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <span class="timeline__emoji">💡</span>
+              <div>
+                <h3>YIIC 7</h3>
+                <span class="timeline__meta">Innovation Challenge</span>
+              </div>
+              <span class="timeline__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="timeline__body">
+              <p>The Youth Ideathon & Innovation Challenge — where ideas meet execution. A milestone in thinking entrepreneurially and turning concepts into action.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shamrocks House Captain — special emphasis -->
+        <div class="timeline__item timeline__item--feature reveal" data-icon="🍀">
+          <div class="timeline__dot timeline__dot--feature"></div>
+          <div class="timeline__card timeline__card--feature">
+            <div class="timeline__feature-badge">Featured Milestone</div>
+            <div class="timeline__head">
+              <span class="timeline__emoji timeline__emoji--feature">🍀</span>
+              <div>
+                <h3>Shamrocks House Captain</h3>
+                <span class="timeline__meta">Leadership</span>
+              </div>
+              <span class="timeline__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="timeline__body">
+              <p>The crown jewel of my school journey. Leading the Shamrocks House meant rallying teammates, organizing events, and carrying the house's colors with pride. It taught me that real leadership is service — lifting others so the whole team rises. This is the role that shaped how I build communities today.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal" data-icon="🫡">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <span class="timeline__emoji">🫡</span>
+              <div>
+                <h3>Republic Day &amp; Independence Day Parade</h3>
+                <span class="timeline__meta">Patriotism &amp; Discipline</span>
+              </div>
+              <span class="timeline__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="timeline__body">
+              <p>Marching in honor of the nation — a lesson in discipline, coordination, and pride. Standing in formation teaches you that excellence is a team sport.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal" data-icon="🏅">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <span class="timeline__emoji">🏅</span>
+              <div>
+                <h3>C. V. Raman Science Award</h3>
+                <span class="timeline__meta">Science Excellence</span>
+              </div>
+              <span class="timeline__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="timeline__body">
+              <p>Named after India's Nobel laureate in physics, this award celebrated scientific spirit and inquiry — a recognition that curiosity is the engine of discovery.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal" data-icon="📚">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <span class="timeline__emoji">📚</span>
+              <div>
+                <h3>SSC</h3>
+                <span class="timeline__meta">88.67%</span>
+              </div>
+              <span class="timeline__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="timeline__body">
+              <p>A strong finish to secondary school with 88.67% — the result of consistent effort and the platform for everything that followed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal" data-icon="📚">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <span class="timeline__emoji">📚</span>
+              <div>
+                <h3>Intermediate</h3>
+                <span class="timeline__meta">88.9%</span>
+              </div>
+              <span class="timeline__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="timeline__body">
+              <p>88.9% in Intermediate — stepping closer to a future in technology and innovation with a solid academic foundation.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Achievement Wall -->
+    <section class="section" id="achievements">
+      <div class="section__head">
+        <span class="section__tag reveal">03 — Achievement Wall</span>
+        <h2 class="section__title reveal">The wall of wins</h2>
+      </div>
+      <div class="wall" id="wall">
+
+        <div class="wall__card reveal" style="--i:0">
+          <div class="wall__emoji">🥇</div>
+          <div class="wall__body">
+            <h3>SOF Gold Medal</h3>
+            <span>Class 5</span>
+          </div>
+        </div>
+        <div class="wall__card reveal" style="--i:1">
+          <div class="wall__emoji">🥇</div>
+          <div class="wall__body">
+            <h3>SOF Gold Medal</h3>
+            <span>Class 6</span>
+          </div>
+        </div>
+        <div class="wall__card reveal" style="--i:2">
+          <div class="wall__emoji">🏆</div>
+          <div class="wall__body">
+            <h3>Chekumuki Science</h3>
+            <span>Talent Competition</span>
+          </div>
+        </div>
+        <div class="wall__card reveal" style="--i:3">
+          <div class="wall__emoji">🥈</div>
+          <div class="wall__body">
+            <h3>Essay Writing</h3>
+            <span>2nd Prize</span>
+          </div>
+        </div>
+        <div class="wall__card reveal" style="--i:4">
+          <div class="wall__emoji">🇮🇳</div>
+          <div class="wall__body">
+            <h3>Pariksha Pe Charcha</h3>
+            <span>2023</span>
+          </div>
+        </div>
+        <div class="wall__card reveal" style="--i:5">
+          <div class="wall__emoji">🏅</div>
+          <div class="wall__body">
+            <h3>Appreciation</h3>
+            <span>Certificate</span>
+          </div>
+        </div>
+        <div class="wall__card reveal" style="--i:6">
+          <div class="wall__emoji">💡</div>
+          <div class="wall__body">
+            <h3>YIIC 7</h3>
+            <span>Innovation Challenge</span>
+          </div>
+        </div>
+        <div class="wall__card wall__card--feature reveal" style="--i:7">
+          <div class="wall__emoji">🍀</div>
+          <div class="wall__body">
+            <h3>House Captain</h3>
+            <span>Shamrocks</span>
+          </div>
+        </div>
+        <div class="wall__card reveal" style="--i:8">
+          <div class="wall__emoji">🫡</div>
+          <div class="wall__body">
+            <h3>Parade</h3>
+            <span>RD &amp; ID</span>
+          </div>
+        </div>
+        <div class="wall__card reveal" style="--i:9">
+          <div class="wall__emoji">🏅</div>
+          <div class="wall__body">
+            <h3>C. V. Raman Award</h3>
+            <span>Science</span>
+          </div>
+        </div>
+        <div class="wall__card reveal" style="--i:10">
+          <div class="wall__emoji">📚</div>
+          <div class="wall__body">
+            <h3>SSC</h3>
+            <span>88.67%</span>
+          </div>
+        </div>
+        <div class="wall__card reveal" style="--i:11">
+          <div class="wall__emoji">📚</div>
+          <div class="wall__body">
+            <h3>Intermediate</h3>
+            <span>88.9%</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="section__head">
+        <span class="section__tag reveal">04 — Projects</span>
+        <h2 class="section__title reveal">Things I've built</h2>
+      </div>
+      <div class="projects">
+
+        <article class="project reveal">
+          <div class="project__top">
+            <div class="project__icon">🫖</div>
+            <span class="project__tag">Archive</span>
+          </div>
+          <h3>Chai Archive</h3>
+          <p>A digital archive that preserves and organizes chai stories, recipes, and heritage — keeping tradition alive in a modern, searchable format.</p>
+          <div class="project__tech">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+          <div class="project__links">
+            <a href="#" class="project__link">Live Demo</a>
+            <a href="#" class="project__link">Source</a>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__top">
+            <div class="project__icon">🔒</div>
+            <span class="project__tag">Vault</span>
+          </div>
+          <h3>Chai Vault</h3>
+          <p>A secure storage app for saving personal collections, notes, and memories — encrypted at rest and accessible only to the owner.</p>
+          <div class="project__tech">
+            <span>JavaScript</span><span>Local Storage</span><span>Crypto</span>
+          </div>
+          <div class="project__links">
+            <a href="#" class="project__link">Live Demo</a>
+            <a href="#" class="project__link">Source</a>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__top">
+            <div class="project__icon">📷</div>
+            <span class="project__tag">QR</span>
+          </div>
+          <h3>Chai QR</h3>
+          <p>A QR-code generator and scanner that links physical chai experiences to digital content — bridging the offline and online worlds.</p>
+          <div class="project__tech">
+            <span>QR Library</span><span>Camera API</span><span>PWA</span>
+          </div>
+          <div class="project__links">
+            <a href="#" class="project__link">Live Demo</a>
+            <a href="#" class="project__link">Source</a>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__top">
+            <div class="project__icon">🎛️</div>
+            <span class="project__tag">Platform</span>
+          </div>
+          <h3>Community Command Center</h3>
+          <p>A central dashboard for managing community events, members, and communications — bringing order and visibility to community operations.</p>
+          <div class="project__tech">
+            <span>Dashboard</span><span>Realtime</span><span>Charts</span>
+          </div>
+          <div class="project__links">
+            <a href="#" class="project__link">Live Demo</a>
+            <a href="#" class="project__link">Source</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Certificates Gallery -->
+    <section class="section" id="certificates">
+      <div class="section__head">
+        <span class="section__tag reveal">05 — Certificates</span>
+        <h2 class="section__title reveal">Gallery of recognition</h2>
+        <p class="section__sub reveal">A visual showcase of certificates earned along the way.</p>
+      </div>
+      <div class="gallery" id="gallery">
+
+        <figure class="gallery__item reveal" style="--i:0">
+          <div class="gallery__frame">
+            <div class="gallery__placeholder">
+              <span>🥇</span>
+              <p>SOF Olympiad</p>
+              <small>Gold Medal · Class 5</small>
+            </div>
+          </div>
+          <figcaption>SOF Olympiad — Gold Medal (Class 5)</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal" style="--i:1">
+          <div class="gallery__frame">
+            <div class="gallery__placeholder">
+              <span>🥇</span>
+              <p>SOF Olympiad</p>
+              <small>Gold Medal · Class 6</small>
+            </div>
+          </div>
+          <figcaption>SOF Olympiad — Gold Medal (Class 6)</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal" style="--i:2">
+          <div class="gallery__frame">
+            <div class="gallery__placeholder">
+              <span>🏆</span>
+              <p>Chekumuki</p>
+              <small>Science Talent</small>
+            </div>
+          </div>
+          <figcaption>Chekumuki Science Talent Competition</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal" style="--i:3">
+          <div class="gallery__frame">
+            <div class="gallery__placeholder">
+              <span>🥈</span>
+              <p>Essay Writing</p>
+              <small>2nd Prize</small>
+            </div>
+          </div>
+          <figcaption>Essay Writing — 2nd Prize</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal" style="--i:4">
+          <div class="gallery__frame">
+            <div class="gallery__placeholder">
+              <span>🇮🇳</span>
+              <p>Pariksha Pe Charcha</p>
+              <small>2023</small>
+            </div>
+          </div>
+          <figcaption>Pariksha Pe Charcha 2023</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal" style="--i:5">
+          <div class="gallery__frame">
+            <div class="gallery__placeholder">
+              <span>🏅</span>
+              <p>Appreciation</p>
+              <small>Certificate</small>
+            </div>
+          </div>
+          <figcaption>Certificate of Appreciation</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal" style="--i:6">
+          <div class="gallery__frame">
+            <div class="gallery__placeholder">
+              <span>💡</span>
+              <p>YIIC 7</p>
+              <small>Innovation</small>
+            </div>
+          </div>
+          <figcaption>YIIC 7 — Innovation Challenge</figcaption>
+        </figure>
+
+        <figure class="gallery__item gallery__item--feature reveal" style="--i:7">
+          <div class="gallery__frame gallery__frame--feature">
+            <div class="gallery__placeholder">
+              <span>🍀</span>
+              <p>Shamrocks Captain</p>
+              <small>House Leadership</small>
+            </div>
+          </div>
+          <figcaption>Shamrocks House Captain</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal" style="--i:8">
+          <div class="gallery__frame">
+            <div class="gallery__placeholder">
+              <span>🫡</span>
+              <p>Parade</p>
+              <small>RD &amp; ID</small>
+            </div>
+          </div>
+          <figcaption>Republic Day &amp; Independence Day Parade</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal" style="--i:9">
+          <div class="gallery__frame">
+            <div class="gallery__placeholder">
+              <span>🏅</span>
+              <p>C. V. Raman</p>
+              <small>Science Award</small>
+            </div>
+          </div>
+          <figcaption>C. V. Raman Science Award</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- Current Goals -->
+    <section class="section" id="goals">
+      <div class="section__head">
+        <span class="section__tag reveal">06 — Current Goals</span>
+        <h2 class="section__title reveal">What I'm chasing now</h2>
+      </div>
+      <div class="goals">
+        <div class="goal reveal">
+          <div class="goal__icon">🎯</div>
+          <h3>Master Full-Stack Development</h3>
+          <p>Deepening skills across modern frontend and backend technologies to build production-grade applications end to end.</p>
+          <div class="goal__bar"><span style="width:65%"></span></div>
+        </div>
+        <div class="goal reveal">
+          <div class="goal__icon">🏆</div>
+          <h3>Compete in National Hackathons</h3>
+          <p>Representing my community on national platforms — turning ideas into winning prototypes under pressure.</p>
+          <div class="goal__bar"><span style="width:40%"></span></div>
+        </div>
+        <div class="goal reveal">
+          <div class="goal__icon">📖</div>
+          <h3>Excel in Higher Education</h3>
+          <p>Securing a top engineering seat and maintaining academic excellence as the base for a tech career.</p>
+          <div class="goal__bar"><span style="width:55%"></span></div>
+        </div>
+        <div class="goal reveal">
+          <div class="goal__icon">🌍</div>
+          <h3>Grow the Community</h3>
+          <p>Expanding community initiatives — mentoring juniors and organizing events that bring people together.</p>
+          <div class="goal__bar"><span style="width:50%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future Vision -->
+    <section class="section" id="vision">
+      <div class="section__head">
+        <span class="section__tag reveal">07 — Future Vision</span>
+        <h2 class="section__title reveal">Where I'm headed</h2>
+      </div>
+      <div class="vision">
+        <div class="vision__glow"></div>
+        <div class="vision__content">
+          <p class="vision__lead reveal">
+            I see a future where technology and community grow together — where the skills I build today
+            become the tools that lift others tomorrow.
+          </p>
+          <div class="vision__grid">
+            <div class="vision__card reveal">
+              <span class="vision__year">2026</span>
+              <h3>Engineering &amp; Innovation</h3>
+              <p>Enter a top engineering program and begin contributing to open-source and research projects.</p>
+            </div>
+            <div class="vision__card reveal">
+              <span class="vision__year">2028</span>
+              <h3>Products with Impact</h3>
+              <p>Ship products that solve real community problems — scaling from local tools to platforms people rely on daily.</p>
+            </div>
+            <div class="vision__card reveal">
+              <span class="vision__year">2030+</span>
+              <h3>Tech Leader &amp; Mentor</h3>
+              <p>Lead teams, mentor the next generation, and give back to the communities that shaped me.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__mark">PSN</span>
+        <span>Chaitanya</span>
+      </div>
+      <p class="footer__tag">Student · Developer · Community Contributor</p>
+      <div class="footer__links">
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
+        <a href="#vision">Vision</a>
+      </div>
+      <p class="footer__copy">&copy; <span id="year"></span> Palivela Satya Naga Chaitanya. Crafted with care.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- ChaiBot mascot -->
+  <div class="chaibot" id="chaiBot" aria-hidden="true">
+    <div class="chaibot__avatar">
+      <span class="chaibot__face">🤖</span>
+      <span class="chaibot__antenna"></span>
+    </div>
+    <div class="chaibot__bubble" id="chaiBotBubble">
+      <p id="chaiBotMsg">Hi! I'm ChaiBot — your guide. Scroll down and I'll point out the highlights!</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
