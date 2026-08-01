@@ -584,29 +584,6 @@ if (frame) {
     mx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
     my = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
   });
-
-  // --- Animate ---
-  function animate() {
-    requestAnimationFrame(animate);
-    mesh.rotation.x += 0.005;
-    mesh.rotation.y += 0.012;
-    wire.rotation.x = mesh.rotation.x;
-    wire.rotation.y = mesh.rotation.y;
-    particles.rotation.y += 0.001;
-
-    // Mouse follow
-    mesh.rotation.x += (my * 0.4 - mesh.rotation.x) * 0.02;
-    mesh.rotation.y += (mx * 0.4 - mesh.rotation.y) * 0.02;
-    wire.rotation.x = mesh.rotation.x;
-    wire.rotation.y = mesh.rotation.y;
-
-    renderer.render(scene, camera);
-  }
-  animate();
-
-  window.addEventListener('resize', resize);
-}
-</script>
   
 </body>
 </html>
