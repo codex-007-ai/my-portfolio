@@ -78,21 +78,10 @@
         </div>
 
         <!-- Right: portrait + floating chips -->
-        <div class="hero__visual">
-          <div class="hero__photo-glow"></div>
-          <div class="hero__photo-frame" data-parallax="0.04">
-            <img
-              id="heroPhoto"
-              src="./assets/images/chaitanya.png"
-              alt="Portrait of PSN Chaitanya"
-              loading="eager"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-            />
-            <div class="hero__photo-fallback" style="display:none">
-              <span>PSN</span>
-            </div>
-            <div class="hero__photo-scan"></div>
-          </div>
+       <div class="hero__photo-frame" data-parallax="0.04" id="photoFrame3D">
+             <!-- 3D object will render here -->
+       </div>
+
 
           <!-- Floating glass chips -->
           <div class="hero__chip hero__chip--1" data-parallax="0.07" data-drift="1">
@@ -486,5 +475,127 @@ if (heroVisual) {
 }
 </script>
 
+  <script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+
+const frame = document.getElementById('photoFrame3D');
+if (frame) {
+  // Clear any existing content
+  frame.innerHTML = '';
+  frame.style.cssText += 'display:flex;align-items:center;justify-content:center;overflow:hidden;';
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+  camera.position.z = 3.5;
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  function resize() {
+    const size = Math.min(frame.offsetWidth, frame.offsetHeight, 500);
+    renderer.setSize(size, size);
+    camera.aspect = 1;
+    camera.updateProjectionMatrix();
+  }
+  resize();
+  frame.appendChild(renderer.domElement);
+
+  // --- Main Object: Big Torus Knot ---
+  const geo = new THREE.TorusKnotGeometry(1.1, 0.35, 180, 24);
+  const mat = new THREE.MeshPhysicalMaterial({
+    color: 0x6c63ff,
+    metalness: 0.7,
+    roughness: 0.15,
+    clearcoat: 0.4,
+    emissive: 0x3b2dbf,
+    emissiveIntensity: 0.2,
+  });
+  const mesh = new THREE.Mesh(geo, mat);
+  scene.add(mesh);
+
+  // --- Wireframe shell ---
+  const wireGeo = new THREE.TorusKnotGeometry(1.15, 0.38, 100, 16);
+  const wireMat = new THREE.MeshBasicMaterial({
+    color: 0x8b5cf6,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.2,
+  });
+  const wire = new THREE.Mesh(wireGeo, wireMat);
+  scene.add(wire);
+
+  // --- Floating particles ring ---
+  const particleCount = 200;
+  const positions = new Float32Array(particleCount * 3);
+  for (let i = 0; i < particleCount; i++) {
+    const theta = (i / particleCount) * Math.PI * 2;
+    const radius = 2.2 + Math.random() * 0.5;
+    positions[i * 3] = Math.cos(theta) * radius;
+    positions[i * 3 + 1] = Math.sin(theta) * radius;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 1.5;
+  }
+  const particleGeo = new THREE.BufferGeometry();
+  particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  const particleMat = new THREE.PointsMaterial({
+    color: 0x8b5cf6,
+    size: 0.03,
+    transparent: true,
+    opacity: 0.6,
+    blending: THREE.AdditiveBlending,
+  });
+  const particles = new THREE.Points(particleGeo, particleMat);
+  scene.add(particles);
+
+  // --- Lights ---
+  const light1 = new THREE.DirectionalLight(0xffffff, 2);
+  light1.position.set(2, 2, 3);
+  scene.add(light1);
+  const light2 = new THREE.DirectionalLight(0x6c63ff, 1.5);
+  light2.position.set(-2, -1, 2);
+  scene.add(light2);
+  const light3 = new THREE.PointLight(0x8b5cf6, 0.5, 5);
+  light3.position.set(0, 0, 1);
+  scene.add(light3);
+  scene.add(new THREE.AmbientLight(0x404040, 0.3));
+
+  // --- Mouse ---
+  let mx = 0, my = 0;
+  document.addEventListener('mousemove', (e) => {
+    const rect = frame.getBoundingClientRect();
+    mx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+    my = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+  });
+
+  // --- Animate ---
+  function animate() {
+    requestAnimationFrame(animate);
+    mesh.rotation.x += 0.005;
+    mesh.rotation.y += 0.012;
+    wire.rotation.x = mesh.rotation.x;
+    wire.rotation.y = mesh.rotation.y;
+    particles.rotation.y += 0.001;
+
+    // Mouse follow
+    mesh.rotation.x += (my * 0.4 - mesh.rotation.x) * 0.02;
+    mesh.rotation.y += (mx * 0.4 - mesh.rotation.y) * 0.02;
+    wire.rotation.x = mesh.rotation.x;
+    wire.rotation.y = mesh.rotation.y;
+
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', resize);
+}
+</script>
+  
 </body>
 </html>
