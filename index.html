@@ -78,9 +78,20 @@
         </div>
 
         <!-- Right: portrait + floating chips -->
-       <div class="hero__photo-frame" data-parallax="0.04" id="photoFrame3D">
-             <!-- 3D object will render here -->
+       <div class="hero__photo-frame" data-parallax="0.04">
+         <img
+          id="heroPhoto"
+          src="./assets/images/chaitanya.png"
+          alt="Portrait of PSN Chaitanya"
+          loading="eager"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+       <div class="hero__photo-fallback" style="display:none">
+        <span>PSN</span>
        </div>
+       <div class="hero__photo-scan"></div>
+       </div>
+
 
 
           <!-- Floating glass chips -->
